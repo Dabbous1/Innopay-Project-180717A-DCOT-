@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, Item, Input } from 'native-base';
+import { Container, Header, Item, Input, View } from 'native-base';
 
 export default class RoundedTextboxExample extends Component {
   render() {
     return (
-      <Content>
+      <View>
         <Item rounded>
           <Input placeholder='Rounded Textbox'/>
         </Item>
-      </Content>
+      </View>
     );
   }
 }
