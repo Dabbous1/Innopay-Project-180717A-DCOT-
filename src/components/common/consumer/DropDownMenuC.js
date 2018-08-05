@@ -1,5 +1,9 @@
 import React, { Component } from "react";
+import {createStackNavigator} from "react-navigation";
 import { Container, Header, Content, Icon, Picker, Form } from "native-base";
+import RegistrationScreenC from 'screens/consumer/RegistrationScreenC';
+import RecieveMenuScreenC from 'screens/consumer/RecieveMenuScreenC';
+import SendDetailsScreenC from 'screens/consumer/SendDetailsScreenC';
 
 export default class PickerWithIcon extends Component {
   constructor(props) {
@@ -26,9 +30,9 @@ export default class PickerWithIcon extends Component {
               selectedValue={this.state.selected}
               onValueChange={this.onValueChange.bind(this)}
             >
-              <Picker.Item label="Registration" value="key0" onValueChange={() => this.props.navigation.navigate('Registration')} />
-              <Picker.Item label="Recieve" value="key1" onValueChange={() => this.props.navigation.navigate('RecieveMenu')} />
-              <Picker.Item label="Send" value="key2" onValueChange={() => this.props.navigation.navigate('SendDetails')} />
+              <Picker.Item label="Registration" value="key0"/>
+              <Picker.Item label="Recieve" value="key1"  />
+              <Picker.Item label="Send" value="key2"/>
             </Picker>
           </Form>
         </Content>
@@ -36,6 +40,4 @@ export default class PickerWithIcon extends Component {
     );
   }
 }
-
-
 
