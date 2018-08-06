@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-import {createStackNavigator} from "react-navigation";
 import { Container, Header, Content, Icon, Picker, Form } from "native-base";
-import RegistrationScreenC from 'screens/consumer/RegistrationScreenC';
-import RecieveMenuScreenC from 'screens/consumer/RecieveMenuScreenC';
-import SendDetailsScreenC from 'screens/consumer/SendDetailsScreenC';
+
 
 export default class PickerWithIcon extends Component {
   constructor(props) {

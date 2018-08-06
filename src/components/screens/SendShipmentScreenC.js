@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Constants } from 'expo';
+
 // package Menu
 
 
-export default class RecieveBarCode extends React.Component {
+export default class SendShipment extends React.Component {
   render() {
   return (
     <View style={styles.container}>
-       <Text> This is the Recieve Bar Code Screen! </Text>
+       <Text> This is the Send Shipment Screen! </Text>
     </View>
     );
   }
@@ -18,9 +18,8 @@ export default class RecieveBarCode extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#ecf0f1',
   },
 });

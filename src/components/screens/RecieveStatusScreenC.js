@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Constants } from 'expo';
+
 // package Menu
 
 
-export default class RecieveMenu extends React.Component {
+export default class RecieveStatus extends React.Component {
   render() {
   return (
     <View style={styles.container}>
-       <Text> This is the Recieve Menu Screen! </Text>
+       <Text> This is the Recieve Status Screen! </Text>
     </View>
     );
   }
@@ -18,9 +18,8 @@ export default class RecieveMenu extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#ecf0f1',
   },
 });
