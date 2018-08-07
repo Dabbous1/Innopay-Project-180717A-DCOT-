@@ -6,13 +6,14 @@ const container = props => (
         {props.children}
     </View>
 )
-StyleSheet.create({
+
+export default container
+
+const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'red',
+        backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',
     },
 })
-
-export default container

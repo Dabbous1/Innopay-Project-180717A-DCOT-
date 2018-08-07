@@ -1,30 +1,40 @@
-import React, { Component } from 'react';
-import { Form, Item, Input, Label } from 'native-base';
+import React, { Component } from 'react'
+import {
+    Container, Header, Content, Form, Item, Input, Label,
+} from 'native-base'
 
-class LoginForm  extends Component {
+class LoginForm extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
-            Username: null, 
-            Password: null, 
-          };
+            username: null,
+            password: null,
+        }
     }
+
     render() {
         return (
-    <View>
-        <Form>
-        <Item floatingLabel>
-            <Label>Username</Label>
-            <Input />
-          </Item>
-          <Item floatingLabel last>
-            <Label>Password</Label>
-            <Input />
-          </Item>
-        </Form>
-    </View>
-        );
+            <Container>
+                <Header />
+                <Content>
+                    <Form>
+                        <Item floatingLabel>
+                            <Label>
+Username
+                            </Label>
+                            <Input />
+                        </Item>
+                        <Item floatingLabel last>
+                            <Label>
+Password
+                            </Label>
+                            <Input />
+                        </Item>
+                    </Form>
+                </Content>
+            </Container>
+        )
     }
 }
 
-export default LoginForm 
+export default LoginForm
