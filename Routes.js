@@ -5,6 +5,7 @@ import { Icon } from 'react-native-elements'
 import WelcomeScreenC from './src/components/screens/WelcomeScreenC'
 import RegistrationScreenC from './src/components/screens/RegistrationScreenC'
 import LoginScreenC from './src/components/screens/LoginScreenC'
+import ProfileScreenC from './src/components/screens/ProfileScreenC'
 import RecieveMenuScreenC from './src/components/screens/RecieveMenuScreenC'
 import RecieveTrackScreenC from './src/components/screens/RecieveTrackScreenC'
 import RecieveBarCodeScreenC from './src/components/screens/RecieveBarCodeScreenC'
@@ -17,23 +18,23 @@ import SendReceiptScreenC from './src/components/screens/SendReceiptScreenC'
 import SettingsScreenC from './src/components/screens/SettingsScreenC'
 import Header from './src/components/common/HeaderC'
 
-export const RegistrationStack = createStackNavigator({
+export const WelcomeStack = createStackNavigator({
     Welcome: {
         screen: WelcomeScreenC,
         navigationOptions: {
-            header: <Header />,
+            header: null,
         },
     },
     Login: {
         screen: LoginScreenC,
         navigationOptions: {
-            header: <Header />,
+            header: null,
         },
     },
     Registration: {
         screen: RegistrationScreenC,
         navigationOptions: {
-            header: <Header />,
+            header: null,
         },
     },
 })
@@ -98,6 +99,15 @@ export const RecieveStack = createStackNavigator({
     },
 })
 
+export const ProfileStack = createStackNavigator({
+    Settings: {
+        screen: ProfileScreenC,
+        navigationOptions: {
+            header: <Header />,
+        },
+    },
+})
+
 export const SettingsStack = createStackNavigator({
     Settings: {
         screen: SettingsScreenC,
@@ -123,7 +133,7 @@ export const Tabs = createBottomTabNavigator({
         },
     },
     Profile: {
-        screen: RegistrationStack,
+        screen: ProfileStack,
         navigationOptions: {
             tabBarLabel: 'Profile',
             tabBarIcon: ({ tintColor }) => <Icon name="account-circle" size={35} color={tintColor} />,
@@ -140,9 +150,9 @@ export const Tabs = createBottomTabNavigator({
 
 const Routes = createStackNavigator({
     Welcome: {
-        screen: Tabs,
+        screen: WelcomeStack,
         navigationOptions: {
-            header: <Header />,
+            headerTitle: 'Welcome',
         },
     },
 })

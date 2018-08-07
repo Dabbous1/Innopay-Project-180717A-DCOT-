@@ -37,9 +37,3 @@ export default createStackNavigator({
         screen: TabsAB,
     },
 })
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-})

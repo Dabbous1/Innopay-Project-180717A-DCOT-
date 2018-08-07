@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
-// package Menu
+// Profile
 
 export default class RecieveBarCode extends React.Component {
     render() {
@@ -9,7 +9,7 @@ export default class RecieveBarCode extends React.Component {
             <View style={styles.container}>
                 <Text>
                     {' '}
-This is the Recieve Bar Code Screen!
+This is your Profile Screen!
                     {' '}
                 </Text>
             </View>
