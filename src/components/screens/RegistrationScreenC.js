@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Tabmenu from '../common/TabsC'
+import RegistrationForm from '../common/RegistrationForm'
 
-export default class RegistrationScreen extends React.Component {
+export default class RegistrationScreenC extends React.Component {
     render() {
-        return <Tabmenu />
+        return <RegistrationForm />
     }
 }

@@ -16,7 +16,10 @@ import SendShipmentScreenC from './src/components/screens/SendShipmentScreenC'
 import SendOverviewScreenC from './src/components/screens/SendOverviewScreenC'
 import SendReceiptScreenC from './src/components/screens/SendReceiptScreenC'
 import SettingsScreenC from './src/components/screens/SettingsScreenC'
+
 import Header from './src/components/common/HeaderC'
+import RegistrationForm from './src/components/common/RegistrationForm'
+import PinForm from './src/components/common/PinForm'
 
 export const WelcomeStack = createStackNavigator({
     Welcome: {
@@ -148,13 +151,13 @@ export const Tabs = createBottomTabNavigator({
     },
 })
 
-const Routes = createStackNavigator({
-    Welcome: {
-        screen: WelcomeStack,
-        navigationOptions: {
-            headerTitle: 'Welcome',
-        },
-    },
-})
+const user = true
 
-export default Routes
+const Navigation = () => {
+    if (!user) {
+        return <Tabs />
+    }
+    return <WelcomeStack />
+}
+
+export default Navigation

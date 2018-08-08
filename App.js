@@ -1,11 +1,8 @@
-import React from 'react';
-import Routes from "./Routes";
-
+import React from 'react'
+import Navigation from './Routes'
 
 export default class App extends React.Component {
-  render() {
-  return (
-    <Routes />
-    );
-  }
+    render() {
+        return <Navigation />
+    }
 }
