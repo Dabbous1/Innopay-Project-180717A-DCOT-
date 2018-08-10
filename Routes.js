@@ -31,78 +31,78 @@ export const WelcomeStack = createStackNavigator({
     Login: {
         screen: LoginScreenC,
         navigationOptions: {
-            header: null,
+            headerTitle: 'login',
         },
     },
     Registration: {
         screen: RegistrationScreenC,
         navigationOptions: {
-            header: null,
+            headerTitle: 'registration',
         },
     },
 })
 
-export const SendStack = createStackNavigator({
+const SendStack = createStackNavigator({
     SendDetails: {
         screen: SendDetailsScreenC,
         navigationOptions: {
-            header: <Header />,
+            headerTitle: 'Enter Details',
         },
     },
     SendAddress: {
         screen: SendAddressScreenC,
         navigationOptions: {
-            header: <Header />,
+            headerTitle: 'Shipment Address',
         },
     },
     SendShipment: {
         screen: SendShipmentScreenC,
         navigationOptions: {
-            header: <Header />,
+            headerTitle: 'Send Shipment',
         },
     },
     SendOverview: {
         screen: SendOverviewScreenC,
         navigationOptions: {
-            header: <Header />,
+            headerTitle: 'Shipment Overview',
         },
     },
     SendReceipt: {
         screen: SendReceiptScreenC,
         navigationOptions: {
-            header: <Header />,
+            headerTitle: 'Shipment Details',
         },
     },
 })
 
-export const RecieveStack = createStackNavigator({
+const RecieveStack = createStackNavigator({
     RecieveMenu: {
         screen: RecieveMenuScreenC,
         navigationOptions: {
-            header: <Header />,
+            headerTitle: 'Incoming Shipments',
         },
     },
     RecieveTrack: {
         screen: RecieveTrackScreenC,
         navigationOptions: {
-            header: <Header />,
+            headerTitle: 'Track Shipment',
         },
     },
     RecieveBarCode: {
         screen: RecieveBarCodeScreenC,
         navigationOptions: {
-            header: <Header />,
+            headerTitle: 'Enter Barcode',
         },
     },
     RecieveStatus: {
         screen: RecieveStatusScreenC,
         navigationOptions: {
-            header: <Header />,
+            headerTitle: 'Shipment Status',
         },
     },
 })
 
-export const ProfileStack = createStackNavigator({
+const ProfileStack = createStackNavigator({
     Settings: {
         screen: ProfileScreenC,
         navigationOptions: {
@@ -111,7 +111,7 @@ export const ProfileStack = createStackNavigator({
     },
 })
 
-export const SettingsStack = createStackNavigator({
+const SettingsStack = createStackNavigator({
     Settings: {
         screen: SettingsScreenC,
         navigationOptions: {
@@ -151,13 +151,13 @@ export const Tabs = createBottomTabNavigator({
     },
 })
 
-const user = true
+// const user = true
 
-const Navigation = () => {
-    if (!user) {
-        return <Tabs />
-    }
-    return <WelcomeStack />
-}
+// const Navigation = () => {
+//     if (!user) {
+//         return <Tabs />
+//     }
+//     return <WelcomeStack />
+// }
 
-export default Navigation
+// export default Navigation

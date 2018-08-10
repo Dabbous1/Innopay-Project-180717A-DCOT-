@@ -1,8 +1,26 @@
-import React from 'react'
-import Navigation from './Routes'
+import React, { Component } from 'react'
+import { AsyncStorage } from 'react-native'
+import { Tabs, WelcomeStack } from './Routes'
 
-export default class App extends React.Component {
+export default class App extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            isAuthenticated: false,
+        }
+    }
+
+    componentDidMount() {
+        const JWT = AsyncStorage.getItem(JWT)
+        if (JWT) {
+            this.setState({ isAuthenticated: true })
+        } else {
+            this.setState({ isAuthenticated: false })
+        }
+        console.log(JWT)
+    }
+
     render() {
-        return <Navigation />
+        return !this.state.isAuthenticated ? <WelcomeStack /> : <Tabs />
     }
 }
