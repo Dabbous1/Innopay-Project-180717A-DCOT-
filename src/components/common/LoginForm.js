@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, Form, Item, Input, Label, Button, Text } from 'native-base';
+import { AsyncStorage } from 'react-native';
+import { Container, Content, Form, Item, Input, Label, Button, Text } from 'native-base';
 import axios from 'axios';
 
 class LoginForm extends Component {
@@ -14,11 +15,11 @@ class LoginForm extends Component {
 	onSubmit = () => {
 		const { email, pin } = this.state;
 		axios
-			.post('http://192.168.178.22:4000/api/v1/sign_in', { email, pin })
-			.then(x => {
-				console.log(x.data);
+			.post('http://0.0.0.0:4000/api/v1/sign_in', { email, pin })
+			.then(response => {
 				AsyncStorage.setItem('JWT', response.data.jwt);
-				this.props.navigation.navigate('Recieve');
+				console.log(response.data.jwt);
+				this.props.navigation.navigate('Profile');
 			})
 			.catch(error => {
 				console.log(error);
@@ -32,12 +33,12 @@ class LoginForm extends Component {
 	render() {
 		return (
 			<Container>
-				<Header />
 				<Content>
 					<Form>
 						<Item floatingLabel>
-							<Label>Username</Label>
+							<Label>Email</Label>
 							<Input
+								autoCapitalize="none"
 								value={this.state.email}
 								onChangeText={email => {
 									this.setState({ email });
@@ -45,8 +46,9 @@ class LoginForm extends Component {
 							/>
 						</Item>
 						<Item floatingLabel last>
-							<Label>Password</Label>
+							<Label>Pin</Label>
 							<Input
+								keyboardType={'number-pad'}
 								value={this.state.pin}
 								onChangeText={pin => {
 									this.setState({ pin });

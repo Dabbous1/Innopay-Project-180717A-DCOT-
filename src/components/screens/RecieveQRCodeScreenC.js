@@ -1,13 +1,13 @@
-import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
-// Send Shipment
+// package Menu
 
-export default class SendShipment extends React.Component {
+export default class RecieveQRCode extends React.Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<Text> This is the Send Shipment Screen! </Text>
+				<Text> This is the Recieve Bar Code Screen! </Text>
 			</View>
 		);
 	}
