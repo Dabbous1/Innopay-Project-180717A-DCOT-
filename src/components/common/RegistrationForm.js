@@ -10,10 +10,26 @@ class RegistrationForm extends Component {
 		this.state = {
 			name: '',
 			email: '',
+			emailValidate: '',
 			pin: '',
+			pinValidate: '',
 			role: 'Consumer',
 			pin_confirmation: ''
 		};
+	}
+
+	validate(text, type) {
+		alph = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
+		if (type == 'email') {
+			if (alph.test(text)) {
+				this.setState({ emailValidate: true });
+			} else {
+				this.setState({ emailValidate: false });
+			}
+		}
+		if ({ emailValidate: true }) {
+			this.setState({ email: text });
+		}
 	}
 
 	onSubmit = () => {
@@ -56,9 +72,7 @@ class RegistrationForm extends Component {
 						<Input
 							autoCapitalize="none"
 							value={this.state.email}
-							onChangeText={email => {
-								this.setState({ email });
-							}}
+							onChangeText={text => this.validate(text, 'email')}
 						/>
 					</Item>
 					<Item floatingLabel last>
